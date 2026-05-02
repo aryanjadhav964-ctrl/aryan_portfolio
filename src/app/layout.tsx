@@ -17,6 +17,7 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://localhost:3000'),
   title: 'Aryan | Freelance Video Editor & Shopify Developer',
   description:
     'I help creators and brands grow with high-converting content. Specializing in reel editing, content strategy, Shopify store setup, and social media management.',
