@@ -82,7 +82,7 @@ export default function HeroSection() {
           animate="visible"
           className="flex flex-col items-center gap-4"
         >
-          <motion.p variants={itemVariants} className="text-muted-foreground text-sm uppercase tracking-[0.2em] font-medium">
+          <motion.p variants={itemVariants} className="text-muted-foreground text-xs md:text-sm uppercase tracking-[0.15em] md:tracking-[0.2em] font-medium px-4 md:px-0 text-center">
             Freelance Video Editor & Shopify Developer
           </motion.p>
 
@@ -96,7 +96,7 @@ export default function HeroSection() {
 
           <motion.p
             variants={itemVariants}
-            className="text-muted-foreground text-lg md:text-xl max-w-2xl leading-relaxed text-balance"
+            className="text-muted-foreground text-base md:text-xl max-w-2xl leading-relaxed text-balance px-4 md:px-0"
           >
             I help <span className="text-foreground font-medium">creators and brands</span> grow with{' '}
             <span className="text-primary font-medium">high-converting content</span> — from scroll-stopping reels to revenue-generating Shopify stores.
