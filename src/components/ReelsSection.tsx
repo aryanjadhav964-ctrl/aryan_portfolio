@@ -8,12 +8,12 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 
 const reels = [
-  { id: 1, title: 'Gym Transformation', category: 'Fitness', views: '243K', likes: '18.2K', color: 'from-violet-600 to-purple-800', emoji: '💪' },
-  { id: 2, title: 'Fashion Lookbook', category: 'Fashion', views: '189K', likes: '14.5K', color: 'from-pink-600 to-rose-800', emoji: '👗' },
-  { id: 3, title: 'Product Launch', category: 'Brand', views: '512K', likes: '31.8K', color: 'from-cyan-600 to-blue-800', emoji: '🚀' },
-  { id: 4, title: 'Travel Montage', category: 'Travel', views: '328K', likes: '22.1K', color: 'from-amber-600 to-orange-800', emoji: '✈️' },
-  { id: 5, title: 'Food Reel', category: 'Food', views: '156K', likes: '11.7K', color: 'from-emerald-600 to-green-800', emoji: '🍜' },
-  { id: 6, title: 'Motivation Edit', category: 'Lifestyle', views: '890K', likes: '64.3K', color: 'from-indigo-600 to-violet-800', emoji: '⚡' },
+  { id: 1, title: 'Gym Transformation', category: 'Fitness', views: '243K', likes: '18.2K', color: 'from-violet-600 to-purple-800', emoji: '💪', videoUrl: '', href: '' },
+  { id: 2, title: 'Fashion design', category: 'Fashion', views: '189K', likes: '14.5K', color: 'from-pink-600 to-rose-800', emoji: '👗', videoUrl: 'https://mtsvqzvisqfzlvbixepa.supabase.co/storage/v1/object/sign/reels-videos/niki%20final%20last.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV81MDM3MzQxYi1mYTE1LTQ0OGYtOWZjMy04MTljNTg0ZGY3M2IiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWVscy12aWRlb3MvbmlraSBmaW5hbCBsYXN0Lm1wNCIsImlhdCI6MTc3NzgxODAyNSwiZXhwIjoxODA5MzU0MDI1fQ.h1VoiN5Ld8YJqCROsQuxxvs6aWeUqu8X50uW2P7N_Rg', href: '' },
+  { id: 3, title: 'Product Launch by Janayebyrajni', category: 'Janayebyrajni', views: '512K', likes: '31.8K', color: 'from-cyan-600 to-blue-800', emoji: '🚀', videoUrl: 'https://mtsvqzvisqfzlvbixepa.supabase.co/storage/v1/object/sign/reels-videos/rajni%203.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV81MDM3MzQxYi1mYTE1LTQ0OGYtOWZjMy04MTljNTg0ZGY3M2IiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWVscy12aWRlb3MvcmFqbmkgMy5tcDQiLCJpYXQiOjE3Nzc4MTgwNjksImV4cCI6MTgwOTM1NDA2OX0.93R0BEEH3hOAfcVEgc4N2dyQxABfgtcunUMkuJQmkiE', href: '' },
+  { id: 4, title: 'Mangalsutra', category: 'indian tredition', views: '328K', likes: '22.1K', color: 'from-amber-600 to-orange-800', emoji: '✈️', videoUrl: '', href: '' },
+  { id: 5, title: 'Food Reel', category: 'Food', views: '156K', likes: '11.7K', color: 'from-emerald-600 to-green-800', emoji: '🍜', videoUrl: 'https://mtsvqzvisqfzlvbixepa.supabase.co/storage/v1/object/sign/reels-videos/rajni2.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV81MDM3MzQxYi1mYTE1LTQ0OGYtOWZjMy04MTljNTg0ZGY3M2IiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWVscy12aWRlb3MvcmFqbmkyLm1wNCIsImlhdCI6MTc3NzgxODEyNiwiZXhwIjoxODA5MzU0MTI2fQ.e9GaUjDMSljzwCCFlN-5H2gQ3RDCFTJJikTUfJDJj9I', href: '' },
+  { id: 6, title: 'new house', category: 'Lifestyle new house', views: '890K', likes: '64.3K', color: 'from-indigo-600 to-violet-800', emoji: '⚡', videoUrl: '', href: '' },
 ];
 
 export default function ReelsSection() {
@@ -76,21 +76,41 @@ export default function ReelsSection() {
                   transition={{ delay: i * 0.08, duration: 0.5 }}
                 >
                   {/* Phone-sized card */}
-                  <Card className="relative w-[200px] h-[356px] md:w-[220px] md:h-[390px] overflow-hidden group cursor-pointer border-border">
-                    {/* Background gradient */}
-                    <div className={`absolute inset-0 bg-gradient-to-br ${reel.color} opacity-80`} />
+                  <Card
+                    className="relative w-[200px] h-[356px] md:w-[220px] md:h-[390px] overflow-hidden group cursor-pointer border-border"
+                    onClick={() => reel.href && window.open(reel.href, '_blank')}
+                  >
+                    {/* Background */}
+                    {reel.videoUrl ? (
+                      <>
+                        <video
+                          src={reel.videoUrl}
+                          className="absolute inset-0 w-full h-full object-cover"
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
+                        />
+                        <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300" />
+                      </>
+                    ) : (
+                      <>
+                        {/* Background gradient */}
+                        <div className={`absolute inset-0 bg-gradient-to-br ${reel.color} opacity-80`} />
 
-                    {/* Overlay noise texture */}
-                    <div className="absolute inset-0 opacity-20 mix-blend-overlay"
-                      style={{
-                        backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 256 256\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noise\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noise)\'/%3E%3C/svg%3E")',
-                      }}
-                    />
+                        {/* Overlay noise texture */}
+                        <div className="absolute inset-0 opacity-20 mix-blend-overlay"
+                          style={{
+                            backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 256 256\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noise\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noise)\'/%3E%3C/svg%3E")',
+                          }}
+                        />
 
-                    {/* Emoji decoration */}
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-6xl opacity-20 select-none">
-                      {reel.emoji}
-                    </div>
+                        {/* Emoji decoration */}
+                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-6xl opacity-20 select-none">
+                          {reel.emoji}
+                        </div>
+                      </>
+                    )}
 
                     {/* Play button */}
                     <motion.div
