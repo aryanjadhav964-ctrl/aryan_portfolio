@@ -69,9 +69,11 @@ export default function HeroSection() {
         >
           <div className="w-28 h-28 md:w-36 md:h-36 rounded-full overflow-hidden border-4 border-border relative z-10">
             {/* Fallback avatar */}
-            <div className="w-full h-full bg-muted flex items-center justify-center">
-              <span className="text-4xl md:text-5xl font-bold font-display text-muted-foreground">A</span>
-            </div>
+            <img
+              src="https://mtsvqzvisqfzlvbixepa.supabase.co/storage/v1/object/public/reels-videos/20260429_090420.jpg.jpeg"
+              alt="Aryan"
+              className="w-full h-full object-cover"
+            />
           </div>
         </motion.div>
 
