@@ -28,7 +28,7 @@ export default function Footer() {
           {/* Social links */}
           <div className="flex items-center gap-3">
             <motion.a
-              href="https://instagram.com"
+              href="https://www.instagram.com/aryan_media_lab/"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.1, y: -2 }}
@@ -39,7 +39,7 @@ export default function Footer() {
               <Instagram size={18} />
             </motion.a>
             <motion.a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/aryan-jadhav-a856612b6/"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.1, y: -2 }}

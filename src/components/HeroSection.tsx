@@ -135,17 +135,17 @@ export default function HeroSection() {
             className="flex items-center gap-6 mt-4 text-sm text-muted-foreground"
           >
             <div className="flex items-center gap-2">
-              <span className="text-primary font-bold text-lg">50+</span>
+              <span className="text-primary font-bold text-lg">5+</span>
               <span>Projects Done</span>
             </div>
-            <div className="w-px h-4 bg-border" />
+            {/* <div className="w-px h-4 bg-border" />
             <div className="flex items-center gap-2">
               <span className="text-primary font-bold text-lg">5M+</span>
               <span>Views Generated</span>
-            </div>
+            </div> */}
             <div className="w-px h-4 bg-border" />
             <div className="flex items-center gap-2">
-              <span className="text-primary font-bold text-lg">30+</span>
+              <span className="text-primary font-bold text-lg">5+</span>
               <span>Happy Clients</span>
             </div>
           </motion.div>
